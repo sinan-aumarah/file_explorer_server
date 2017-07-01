@@ -53,8 +53,8 @@ HttpFileServer#doRun(): Runs a simple HTTP server using HTTP1.1 spec. When a req
 - Use log4j or any logging library
 
 
-# About Sinan Aumarah
-[Sinan Aumarah](https://sinanaumarah.com)
+#### About The Author
+Visit my personal website: [sinanaumarah.com](https://sinanaumarah.com)
 
     
     
