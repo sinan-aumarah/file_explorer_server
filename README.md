@@ -1,3 +1,6 @@
+## About
+This is an extremely simple java server using only java.net.* package to run a local file explorer system which is similar to what most package manager sites use such as http://central.maven.org/
+
 ### Prerequisites
  1. JDK1.8
  2. Gradle 3.5+
@@ -28,8 +31,7 @@ Run the app using
     
 ### Design decisions: 
 You will notice I used interfaces for everything even for something as simple as FileDownloader. This mainly
-a practice that I always do to hide the implementation and also testing purposes. You can always go and change the implementation
-without worrying about the side effects.
+a practice that I always do to hide the implementation and also testing purposes. You can always go and change the implementation without worrying about the side effects.
 
 ### App structure and functionality
 HttpFileServer#doRun(): Runs a simple HTTP server using HTTP1.1 spec. When a request is received
