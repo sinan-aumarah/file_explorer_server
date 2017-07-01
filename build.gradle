@@ -1,0 +1,45 @@
+group 'com.sinanaumarah'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = "com.sinanaumarah.FileServerApp"
+
+jar {
+    baseName = "fileServer"
+    manifest {
+        attributes 'Main-Class': 'com.sinanaumarah.FileServerApp'
+    }
+}
+
+run {
+    if (project.hasProperty('args')) {
+        args project.args.split('\\s+')
+    }
+}
+
+test {
+    afterTest { desc, result ->
+        println "Executing ${desc.name} with result: ${result.resultType}"
+    }
+    testLogging {
+        afterSuite { desc, result ->
+            if (!desc.parent) {
+                println "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
+            }
+        }
+    }
+}
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+}
